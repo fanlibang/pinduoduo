@@ -1,17 +1,11 @@
 <?php
-/**
- * //多多客：生成多多进宝推广链接
- */
+namespace fanlibang\pinduoduo\Request;
 
-namespace Xidiankeji\Pinduoduo\Request;
-
-
-use Xidiankeji\Pinduoduo\AbstractInterface\Request;
+use fanlibang\pinduoduo\AbstractInterface\Request;
 
 class DdkOauthGoodsPromUrlGenerateRequest extends Request
 {
     private $type = 'pdd.ddk.oauth.goods.prom.url.generate';
-
 
     private $pid;
 
@@ -21,7 +15,7 @@ class DdkOauthGoodsPromUrlGenerateRequest extends Request
 
     private $multiGroup;
 
-    private $generateWeApp='true';
+    private $generateWeApp = 'true';
 
     public function setType($type)
     {
@@ -86,12 +80,12 @@ class DdkOauthGoodsPromUrlGenerateRequest extends Request
     public function getParams()
     {
         $params = [
-            'type' => $this->type,
-            'p_id' => $this->pid,
-            'goods_id_list' => $this->goodsIdList,
+            'type'               => $this->type,
+            'p_id'               => $this->pid,
+            'goods_id_list'      => $this->goodsIdList,
             'generate_short_url' => $this->generateShortUrl,
-            'multi_group' => $this->multiGroup,
-            'generate_we_app'=>$this->generateWeApp
+            'multi_group'        => $this->multiGroup,
+            'generate_we_app'    => $this->generateWeApp
         ];
 
         return array_filter($params);

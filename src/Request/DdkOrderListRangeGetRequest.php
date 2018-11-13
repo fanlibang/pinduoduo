@@ -1,15 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: david
- * Date: 2018/4/27
- * Time: 下午12:32
- */
+namespace fanlibang\pinduoduo\Request;
 
-namespace Xidiankeji\Pinduoduo\Request;
-
-
-use Xidiankeji\Pinduoduo\AbstractInterface\Request;
+use fanlibang\pinduoduo\AbstractInterface\Request;
 
 class DdkOrderListRangeGetRequest extends Request
 {
@@ -100,13 +92,13 @@ class DdkOrderListRangeGetRequest extends Request
     public function getParams()
     {
         $params = [
-            'type' => $this->type,
+            'type'       => $this->type,
             'start_time' => $this->startTime,
-            'end_time' => $this->endTime,
-            'p_id' => $this->pid,
-            'page_size' => $this->pageSize,
-            'page' => $this->page,
-            'time_type' => $this->timeType
+            'end_time'   => $this->endTime,
+            'p_id'       => $this->pid,
+            'page_size'  => $this->pageSize,
+            'page'       => $this->page,
+            'time_type'  => $this->timeType
         ];
         return array_filter($params);
     }

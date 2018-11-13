@@ -1,8 +1,8 @@
 <?php
-namespace Xidiankeji\Pinduoduo\Request;
+namespace fanlibang\pinduoduo\Request;
 
 
-use Xidiankeji\Pinduoduo\AbstractInterface\Request;
+use fanlibang\pinduoduo\AbstractInterface\Request;
 
 class DdkActPromUrlGenerateRequest extends Request
 {
@@ -69,11 +69,11 @@ class DdkActPromUrlGenerateRequest extends Request
     public function getParams()
     {
         $params = [
-            'type' => $this->type,
-            'url_type' => $this->urlType,
-            'generate_short_url' => $this->generateShortUrl,
+            'type'                      => $this->type,
+            'url_type'                  => $this->urlType,
+            'generate_short_url'        => $this->generateShortUrl,
             'generate_mobile_short_url' => $this->generateMobileShortUrl,
-            'p_id_list' => $this->pIdList
+            'p_id_list'                 => $this->pIdList
         ];
         return array_filter($params);
     }

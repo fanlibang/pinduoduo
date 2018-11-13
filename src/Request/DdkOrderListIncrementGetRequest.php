@@ -1,15 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: david
- * Date: 2018/4/27
- * Time: 下午4:16
- */
-
-namespace Xidiankeji\Pinduoduo\Request;
+namespace fanlibang\pinduoduo\Request;
 
 
-use Xidiankeji\Pinduoduo\AbstractInterface\Request;
+use fanlibang\pinduoduo\AbstractInterface\Request;
 
 class DdkOrderListIncrementGetRequest extends Request
 {
@@ -88,12 +81,12 @@ class DdkOrderListIncrementGetRequest extends Request
     public function getParams()
     {
         $params = [
-            'type' => $this->type,
+            'type'              => $this->type,
             'start_update_time' => $this->startUpdateTime,
-            'end_update_time' => $this->endUpdateTime,
-            'p_id' => $this->pid,
-            'page_size' => $this->pageSize,
-            'page' => $this->page
+            'end_update_time'   => $this->endUpdateTime,
+            'p_id'              => $this->pid,
+            'page_size'         => $this->pageSize,
+            'page'              => $this->page
         ];
         return array_filter($params);
     }

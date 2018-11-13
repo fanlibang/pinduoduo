@@ -1,15 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: david
- * Date: 2018/4/27
- * Time: 下午12:15
- */
+namespace fanlibang\pinduoduo\Request;
 
-namespace Xidiankeji\Pinduoduo\Request;
-
-
-use Xidiankeji\Pinduoduo\AbstractInterface\Request;
+use fanlibang\pinduoduo\AbstractInterface\Request;
 
 class DdkGoodsPidGenerateRequest extends Request
 {
@@ -40,10 +32,9 @@ class DdkGoodsPidGenerateRequest extends Request
     public function getParams()
     {
         $params = [
-            'type' => $this->type,
+            'type'   => $this->type,
             'number' => $this->number
         ];
-
         return array_filter($params);
     }
 }

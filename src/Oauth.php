@@ -1,12 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: david
- * Date: 2018/4/26
- * Time: 下午6:30
- */
-
-namespace Xidiankeji\Pinduoduo;
+namespace fanlibang\pinduoduo;
 
 
 class Oauth
@@ -31,9 +24,9 @@ class Oauth
     public function getCode($type = null)
     {
         if ($type == 'ddk') {
-            $url = $this->ddkCodeUrl.'?response_type=code&client_id='.$this->clientId.'&redirect_uri='.$this->redirectUri;
+            $url = $this->ddkCodeUrl . '?response_type=code&client_id=' . $this->clientId . '&redirect_uri=' . $this->redirectUri;
         } else {
-            $url = $this->sellerCodeUrl.'?response_type=code&client_id='.$this->clientId.'&redirect_uri='.$this->redirectUri;
+            $url = $this->sellerCodeUrl . '?response_type=code&client_id=' . $this->clientId . '&redirect_uri=' . $this->redirectUri;
         }
 //        header('Location: '.$url);
 //        exit();
@@ -42,7 +35,7 @@ class Oauth
 
     public function getToken($code)
     {
-        $url = $this->tokenUrl.'';
+        $url = $this->tokenUrl . '';
         dd($url);
     }
 }

@@ -1,15 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: david
- * Date: 2018/4/27
- * Time: 上午10:23
- */
+namespace fanlibang\pinduoduo\Request;
 
-namespace Xidiankeji\Pinduoduo\Request;
-
-
-use Xidiankeji\Pinduoduo\AbstractInterface\Request;
+use fanlibang\pinduoduo\AbstractInterface\Request;
 
 class DdkGoodsSearchRequest extends Request
 {
@@ -112,14 +104,14 @@ class DdkGoodsSearchRequest extends Request
     public function getParams()
     {
         $params = [
-            'type' => $this->type,
-            'keyword' => $this->keyword,
+            'type'        => $this->type,
+            'keyword'     => $this->keyword,
             'category_id' => $this->categoryId,
-            'page' => $this->page,
-            'page_size' => $this->pageSize,
-            'sort_type' => $this->sortType,
+            'page'        => $this->page,
+            'page_size'   => $this->pageSize,
+            'sort_type'   => $this->sortType,
             'with_coupon' => $this->withCoupon,
-            'range_list' => $this->rangeList
+            'range_list'  => $this->rangeList
         ];
 
         return array_filter($params);

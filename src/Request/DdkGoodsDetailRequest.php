@@ -1,15 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: david
- * Date: 2018/4/27
- * Time: 上午10:22
- */
+namespace fanlibang\pinduoduo\Request;
 
-namespace Xidiankeji\Pinduoduo\Request;
-
-
-use Xidiankeji\Pinduoduo\AbstractInterface\Request;
+use fanlibang\pinduoduo\AbstractInterface\Request;
 
 class DdkGoodsDetailRequest extends Request
 {
@@ -22,7 +14,6 @@ class DdkGoodsDetailRequest extends Request
      * @Author: david
      * @Date: 2018/4/26
      * @param $type
-     *
      */
     public function setType($type)
     {
@@ -34,7 +25,6 @@ class DdkGoodsDetailRequest extends Request
      * @Author: david
      * @Date: 2018/4/26
      * @param $goodsIdList
-     *
      */
     public function setGoodsIdList($goodsIdList)
     {
@@ -61,7 +51,7 @@ class DdkGoodsDetailRequest extends Request
     public function getParams()
     {
         return [
-            'type' => $this->type,
+            'type'          => $this->type,
             'goods_id_list' => $this->goodsIdList
         ];
     }

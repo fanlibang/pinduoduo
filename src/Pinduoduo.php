@@ -1,12 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: david
- * Date: 2018/4/26
- * Time: 下午2:40
- */
-
-namespace Xidiankeji\Pinduoduo;
+namespace fanlibang\pinduoduo;
 
 
 class Pinduoduo
@@ -44,7 +37,7 @@ class Pinduoduo
         ksort($params);
         $str = $this->clientSecret;
         foreach ($params as $paramKey => $param) {
-            $str .= $paramKey.$param;
+            $str .= $paramKey . $param;
         }
         $str .= $this->clientSecret;
         return strtoupper(md5($str));
@@ -70,7 +63,7 @@ class Pinduoduo
             curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->connectTimeout);
         }
         //https 请求
-        if(strlen($url) > 5 && strtolower(substr($url,0,5)) == "https" ) {
+        if (strlen($url) > 5 && strtolower(substr($url, 0, 5)) == "https") {
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         }
@@ -98,19 +91,19 @@ class Pinduoduo
      * @param $request
      * @return mixed
      */
-    public function excute($request,$access_token='')
+    public function excute($request, $access_token = '')
     {
         $baseParams = [
-            'client_id' => $this->clientId,
+            'client_id'    => $this->clientId,
             'access_token' => $access_token,
-            'data_type' => $this->format,
-            'timestamp' => time(),
-            'version' => '',
+            'data_type'    => $this->format,
+            'timestamp'    => time(),
+            'version'      => '',
         ];
         $apiParams = $request->getParams();
         $params = array_merge($apiParams, $baseParams);
         $params['sign'] = $this->generateSign($params);
-        $requestUrl = $this->gatewayUrl."?";
+        $requestUrl = $this->gatewayUrl . "?";
         foreach ($params as $paramKey => $param) {
             $requestUrl .= "$paramKey=" . urlencode($param) . '&';
         }
@@ -133,7 +126,7 @@ class Pinduoduo
      */
     public static function getInstance()
     {
-        if(!isset(self::$instance)){
+        if (!isset(self::$instance)) {
             self::$instance = new static();
         }
         return self::$instance;

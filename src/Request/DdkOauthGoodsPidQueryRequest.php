@@ -1,12 +1,7 @@
 <?php
-/**
- * 多多客：已生成推广位信息查询
- */
+namespace fanlibang\pinduoduo\Request;
 
-namespace Xidiankeji\Pinduoduo\Request;
-
-
-use Xidiankeji\Pinduoduo\AbstractInterface\Request;
+use fanlibang\pinduoduo\AbstractInterface\Request;
 
 class DdkOauthGoodsPidQueryRequest extends Request
 {
@@ -37,7 +32,7 @@ class DdkOauthGoodsPidQueryRequest extends Request
         return $this->page;
     }
 
-    
+
     public function setPageSize($pageSize)
     {
         $this->pageSize = $pageSize;
@@ -52,9 +47,9 @@ class DdkOauthGoodsPidQueryRequest extends Request
     public function getParams()
     {
         $params = [
-            'type' => $this->type,
+            'type'      => $this->type,
             'page_size' => $this->pageSize,
-            'page' => $this->page,
+            'page'      => $this->page,
         ];
         return array_filter($params);
     }
