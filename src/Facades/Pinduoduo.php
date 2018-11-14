@@ -1,5 +1,5 @@
 <?php
-namespace fanlibang\pinduoduo\Facades;
+namespace pinduoduo\Facades;
 
 
 use Illuminate\Support\Facades\Facade;

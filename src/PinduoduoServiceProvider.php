@@ -1,6 +1,6 @@
 <?php
 
-namespace fanlibang\pinduoduo;
+namespace pinduoduo;
 
 use Illuminate\Support\ServiceProvider;
 

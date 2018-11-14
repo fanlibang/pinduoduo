@@ -1,5 +1,5 @@
 <?php
-namespace fanlibang\pinduoduo\AbstractInterface;
+namespace pinduoduo\AbstractInterface;
 
 
 class Request

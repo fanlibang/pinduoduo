@@ -1,8 +1,8 @@
 <?php
-namespace fanlibang\pinduoduo\Request;
+namespace pinduoduo\Request;
 
 
-use fanlibang\pinduoduo\AbstractInterface\Request;
+use pinduoduo\AbstractInterface\Request;
 
 class DdkActPromUrlGenerateRequest extends Request
 {

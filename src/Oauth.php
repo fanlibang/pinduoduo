@@ -1,5 +1,5 @@
 <?php
-namespace fanlibang\pinduoduo;
+namespace pinduoduo;
 
 
 class Oauth
