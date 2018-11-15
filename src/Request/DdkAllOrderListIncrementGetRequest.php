@@ -1,16 +1,15 @@
 <?php
 namespace pinduoduo\Request;
 
-
 use pinduoduo\AbstractInterface\Request;
 
-class DdkOrderListIncrementGetRequest extends Request
+class DdkAllOrderListIncrementGetRequest extends Request
 {
     /**
-     * 按照时间段获取授权多多客下面所有多多客的推广订单信息
+     * 按照时间段获取授权多多客下面所有多多客的推广订单信息(最近6个小时)
      * @var string
      */
-    private $type = 'pdd.ddk.order.list.increment.get';
+    private $type = 'pdd.ddk.all.order.list.increment.get';
 
     private $startUpdateTime;
 

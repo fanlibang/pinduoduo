@@ -5,27 +5,23 @@ use pinduoduo\AbstractInterface\Request;
 
 class DdkGoodsDetailRequest extends Request
 {
+    /**
+     * 查询多多进宝商品详情
+     * @var string
+     */
     private $type = 'pdd.ddk.goods.detail';
 
+    /**
+     * 商品ID，仅支持单个查询。例如：[123456]
+     * @var
+     */
     private $goodsIdList;
 
-    /**
-     * 设置类型
-     * @Author: david
-     * @Date: 2018/4/26
-     * @param $type
-     */
     public function setType($type)
     {
         $this->type = $type;
     }
 
-    /**
-     * 设置商品ID
-     * @Author: david
-     * @Date: 2018/4/26
-     * @param $goodsIdList
-     */
     public function setGoodsIdList($goodsIdList)
     {
         $this->goodsIdList = $goodsIdList;
@@ -42,12 +38,6 @@ class DdkGoodsDetailRequest extends Request
         return $this->goodsIdList;
     }
 
-    /**
-     * 获取参数
-     * @Author: david
-     * @Date: 2018/4/26
-     * @return array
-     */
     public function getParams()
     {
         return [

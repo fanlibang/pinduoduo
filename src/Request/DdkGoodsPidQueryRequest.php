@@ -5,10 +5,22 @@ use pinduoduo\AbstractInterface\Request;
 
 class DdkGoodsPidQueryRequest extends Request
 {
+    /**
+     * 查询已经生成的推广位信息
+     * @var string
+     */
     private $type = 'pdd.ddk.goods.pid.query';
 
+    /**
+     * 返回的页数
+     * @var
+     */
     private $page;
 
+    /**
+     * 返回的每页推广位数量
+     * @var
+     */
     private $pageSize;
 
     public function setType($type)
@@ -48,7 +60,6 @@ class DdkGoodsPidQueryRequest extends Request
             'page'      => $this->page,
             'page_size' => $this->pageSize
         ];
-
         return array_filter($params);
     }
 }
