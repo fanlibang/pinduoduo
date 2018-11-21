@@ -1,11 +1,21 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: richard
+ * Date: 2018/11/20
+ * Time: 下午6:45
+ */
 namespace pinduoduo\Request;
 
 use pinduoduo\AbstractInterface\Request;
 
-class DdkOauthGoodsPromUrlGenerateRequest extends Request
+class DdkRpPromUrlGenerateRequest extends Request
 {
-    private $type = 'pdd.ddk.oauth.goods.prom.url.generate';
+    /**
+     * 生成红包推广链接接口
+     * @var string
+     */
+    private $type = 'pdd.ddk.rp.prom.url.generate';
 
     /**
      * 推广位ID
@@ -14,22 +24,10 @@ class DdkOauthGoodsPromUrlGenerateRequest extends Request
     private $pid;
 
     /**
-     * 商品ID，仅支持单个查询
-     * @var
-     */
-    private $goodsIdList;
-
-    /**
      * 是否生成短链接，true-是，false-否
      * @var
      */
     private $generateShortUrl;
-
-    /**
-     * true--生成多人团推广链接 false--生成单人团推广链接（默认false）1、单人团推广链接：用户访问单人团推广链接，可直接购买商品无需拼团。2、多人团推广链接：用户访问双人团推广链接开团，若用户分享给他人参团，则开团者和参团者的佣金均结算给推手
-     * @var
-     */
-    private $multiGroup;
 
     /**
      * 自定义参数，为链接打上自定义标签。自定义参数最长限制64个字节。
@@ -38,22 +36,11 @@ class DdkOauthGoodsPromUrlGenerateRequest extends Request
     private $customParameters;
 
     /**
-     * 是否开启订单拉新，true表示开启（订单拉新奖励特权仅支持白名单，请联系工作人员开通）
-     * @var
-     */
-    private $pullNew;
-
-    /**
      * 是否生成唤起微信客户端链接，true-是，false-否，默认false
      * @var
      */
     private $generateWeappWebview;
 
-    /**
-     * 招商多多客ID
-     * @var
-     */
-    private $zsduoId;
 
     /**
      * 是否生成小程序推广
@@ -81,16 +68,6 @@ class DdkOauthGoodsPromUrlGenerateRequest extends Request
         return $this->pid;
     }
 
-    public function setGoodsIdList($goodsIdList)
-    {
-        $this->goodsIdList = $goodsIdList;
-    }
-
-    public function getGoodsIdList()
-    {
-        return $this->goodsIdList;
-    }
-
     public function setGenerateShortUrl($generateShortUrl)
     {
         $this->generateShortUrl = $generateShortUrl;
@@ -99,16 +76,6 @@ class DdkOauthGoodsPromUrlGenerateRequest extends Request
     public function getGenerateShortUrl()
     {
         return $this->generateShortUrl;
-    }
-
-    public function setMultiGroup($multiGroup)
-    {
-        $this->multiGroup = $multiGroup;
-    }
-
-    public function getMultiGroup()
-    {
-        return $this->multiGroup;
     }
 
     public function setCustomParameters($customParameters)
@@ -121,16 +88,6 @@ class DdkOauthGoodsPromUrlGenerateRequest extends Request
         return $this->customParameters;
     }
 
-    public function setPullNew($pullNew)
-    {
-        $this->pullNew = $pullNew;
-    }
-
-    public function getPullNew()
-    {
-        return $this->pullNew;
-    }
-
     public function setGenerateWeappWebview($generateWeappWebview)
     {
         $this->generateWeappWebview = $generateWeappWebview;
@@ -139,16 +96,6 @@ class DdkOauthGoodsPromUrlGenerateRequest extends Request
     public function getGenerateWeappWebview()
     {
         return $this->generateWeappWebview;
-    }
-
-    public function setZsduoId($zsduoId)
-    {
-        $this->zsduoId = $zsduoId;
-    }
-
-    public function getZsduoId()
-    {
-        return $this->zsduoId;
     }
 
     public function setGenerateWeApp($generateWeApp)
@@ -165,14 +112,10 @@ class DdkOauthGoodsPromUrlGenerateRequest extends Request
     {
         $params = [
             'type'                   => $this->type,
-            'p_id'                   => $this->pid,
-            'goods_id_list'          => $this->goodsIdList,
+            'p_id_list'              => $this->pid,
             'generate_short_url'     => $this->generateShortUrl,
-            'multi_group'            => $this->multiGroup,
             'custom_parameters'      => $this->customParameters,
-            'pull_new'               => $this->pullNew,
             'generate_weapp_webview' => $this->generateWeappWebview,
-            'zs_duo_id'              => $this->zsduoId,
             'generate_we_app'        => $this->generateWeApp,
         ];
         return array_filter($params);

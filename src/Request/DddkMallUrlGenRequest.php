@@ -123,7 +123,7 @@ class DddkMallUrlGenRequest extends Request
         $params = [
             'type'                   => $this->type,
             'mall_id'                => $this->mallId,
-            'p_id'                   => $this->pid,
+            'pid'                    => $this->pid,
             'generate_weapp_webview' => $this->generateWeappWebview,
             'generate_short_url'     => $this->generateShortUrl,
             'multi_group'            => $this->multiGroup,
