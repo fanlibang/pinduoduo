@@ -60,9 +60,8 @@ class DdkGoodsRecommendGetRequest extends Request
             'type'         => $this->type,
             'offset'       => $this->offset,
             'limit'        => $this->limit,
-            'channel_type' => $this->channelType,
+            'channel_type' => intval($this->channelType),
         ];
-
-        return array_filter($params);
+        return $params;
     }
 }
