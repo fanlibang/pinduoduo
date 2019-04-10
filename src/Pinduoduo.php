@@ -1,7 +1,6 @@
 <?php
 namespace pinduoduo;
 
-
 class Pinduoduo
 {
     private static $instance;
@@ -67,17 +66,14 @@ class Pinduoduo
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
         }
-
-        curl_setopt($ch, CURLOPT_POST, true);
-
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         $reponse = curl_exec($ch);
-
         if (curl_errno($ch)) {
 //            throw new \Exception(curl_error($ch),0);
         } else {
             $httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             if (200 !== $httpStatusCode) {
-                abort($httpStatusCode);
+                return false;
             }
         }
         curl_close($ch);
