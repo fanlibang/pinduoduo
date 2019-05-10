@@ -18,6 +18,12 @@ class DdkGoodsDetailRequest extends Request
     private $goodsIdList;
 
     /**
+     * 推广位id
+     * @var
+     */
+    private $pId;
+
+    /**
      * 自定义参数，为链接打上自定义标签。自定义参数最长限制64个字节。
      * @var
      */
@@ -55,6 +61,16 @@ class DdkGoodsDetailRequest extends Request
         $this->goodsIdList = $goodsIdList;
     }
 
+    public function setPId($pId)
+    {
+        $this->pId = $pId;
+    }
+
+    public function getPId()
+    {
+        return $this->pId;
+    }
+
     public function setZsduoId($zsduoId)
     {
         $this->zsduoId = $zsduoId;
@@ -90,6 +106,7 @@ class DdkGoodsDetailRequest extends Request
         return [
             'type'              => $this->type,
             'goods_id_list'     => $this->goodsIdList,
+            'p_id'              => $this->pId,
             'custom_parameters' => $this->customParameters,
             'zs_duo_id'         => $this->zsduoId,
             'plan_type'         => $this->planType,

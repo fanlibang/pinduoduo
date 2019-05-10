@@ -26,8 +26,6 @@ class Pinduoduo
 
     /**
      * 生成加密签名
-     * @Author: david
-     * @Date: 2018/4/26
      * @param $params
      * @return string
      */
@@ -44,10 +42,8 @@ class Pinduoduo
 
     /**
      * post请求
-     * @Author: david
-     * @Date: 2018/4/26
      * @param $url
-     * @return mixed
+     * @return bool|string
      */
     public function curl_post($url)
     {
@@ -82,9 +78,8 @@ class Pinduoduo
 
     /**
      * 执行
-     * @Author: david
-     * @Date: 2018/4/26
      * @param $request
+     * @param string $access_token
      * @return mixed
      */
     public function excute($request, $access_token = '')
@@ -116,9 +111,7 @@ class Pinduoduo
 
     /**
      * 单例获取当前对象
-     * @Author: david
-     * @Date: 2018/4/26
-     * @return static
+     * @return Pinduoduo
      */
     public static function getInstance()
     {
@@ -130,8 +123,6 @@ class Pinduoduo
 
     /**
      * 魔术方法 调用不存在的静态方法时触发
-     * @Author: david
-     * @Date: 2018/4/26
      * @param $name
      * @param $arguments
      * @return mixed
