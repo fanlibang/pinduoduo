@@ -36,7 +36,7 @@ class PddDdkOrderDetailGet extends Request
 
     public function setOrderSn($orderSn)
     {
-        $this->mallId = $orderSn;
+        $this->orderSn = $orderSn;
     }
 
     public function getOrderSn()
