@@ -9,7 +9,7 @@ namespace pinduoduo\Request;
 
 use pinduoduo\AbstractInterface\Request;
 
-class PddDdkOrderDetailGet extends Request
+class PddDdkOrderDetailGetRequest extends Request
 {
 
     /**

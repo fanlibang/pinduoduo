@@ -2,27 +2,27 @@
 /**
  * Created by PhpStorm.
  * User: MuBeiChen
- * Date: 2019-05-10
- * Time: 11:34
+ * Date: 2019-05-15
+ * Time: 10:39
  */
 namespace pinduoduo\Request;
 
 use pinduoduo\AbstractInterface\Request;
 
-class PddDdkGoodsBasicInfoGet extends Request
+class PddDdkOauthOrderDetailGetRequest extends Request
 {
 
     /**
-     * 获取商品基本信息接口
+     * 查询订单详情
      * @var string
      */
-    private $type = 'pdd.ddk.goods.basic.info.get';
+    private $type = 'pdd.ddk.oauth.order.detail.get';
 
     /**
-     * 商品id
+     * 订单号
      * @var
      */
-    private $goodsIdList;
+    private $orderSn;
 
     public function setType($type)
     {
@@ -34,21 +34,21 @@ class PddDdkGoodsBasicInfoGet extends Request
         return $this->type;
     }
 
-    public function setGoodsIdList($goodsIdList)
+    public function setOrderSn($orderSn)
     {
-        $this->goodsIdList = $goodsIdList;
+        $this->orderSn = $orderSn;
     }
 
-    public function getGoodsIdList()
+    public function getOrderSn()
     {
-        return $this->goodsIdList;
+        return $this->orderSn;
     }
 
     public function getParams()
     {
         $params = [
-            'type'          => $this->type,
-            'goods_id_list' => $this->goodsIdList,
+            'type'     => $this->type,
+            'order_sn' => $this->orderSn,
         ];
         return array_filter($params);
     }

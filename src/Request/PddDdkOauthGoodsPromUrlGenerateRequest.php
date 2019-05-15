@@ -1,22 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: MuBeiChen
- * Date: 2019-05-10
- * Time: 11:26
- */
-
 namespace pinduoduo\Request;
 
 use pinduoduo\AbstractInterface\Request;
 
-class PddDdkPhraseGenerate extends Request
+class PddDdkOauthGoodsPromUrlGenerateRequest extends Request
 {
     /**
-     * 生成多多口令接口
+     * 生成多多进宝推广链接
      * @var string
      */
-    private $type = 'pdd.ddk.phrase.generate';
+    private $type = 'pdd.ddk.oauth.goods.prom.url.generate';
 
     /**
      * 推广位ID
@@ -31,6 +24,12 @@ class PddDdkPhraseGenerate extends Request
     private $goodsIdList;
 
     /**
+     * 是否生成短链接，true-是，false-否
+     * @var
+     */
+    private $generateShortUrl;
+
+    /**
      * true--生成多人团推广链接 false--生成单人团推广链接（默认false）1、单人团推广链接：用户访问单人团推广链接，可直接购买商品无需拼团。2、多人团推广链接：用户访问双人团推广链接开团，若用户分享给他人参团，则开团者和参团者的佣金均结算给推手
      * @var
      */
@@ -43,16 +42,22 @@ class PddDdkPhraseGenerate extends Request
     private $customParameters;
 
     /**
+     * 是否生成唤起微信客户端链接，true-是，false-否，默认false
+     * @var
+     */
+    private $generateWeappWebview;
+
+    /**
      * 招商多多客ID
      * @var
      */
     private $zsduoId;
 
     /**
-     * 1-大图弹框 2-对话弹框
+     * 是否生成小程序推广
      * @var
      */
-    private $style;
+    private $generateWeApp;
 
     public function setType($type)
     {
@@ -84,6 +89,16 @@ class PddDdkPhraseGenerate extends Request
         return $this->goodsIdList;
     }
 
+    public function setGenerateShortUrl($generateShortUrl)
+    {
+        $this->generateShortUrl = $generateShortUrl;
+    }
+
+    public function getGenerateShortUrl()
+    {
+        return $this->generateShortUrl;
+    }
+
     public function setMultiGroup($multiGroup)
     {
         $this->multiGroup = $multiGroup;
@@ -104,6 +119,16 @@ class PddDdkPhraseGenerate extends Request
         return $this->customParameters;
     }
 
+    public function setGenerateWeappWebview($generateWeappWebview)
+    {
+        $this->generateWeappWebview = $generateWeappWebview;
+    }
+
+    public function getGenerateWeappWebview()
+    {
+        return $this->generateWeappWebview;
+    }
+
     public function setZsduoId($zsduoId)
     {
         $this->zsduoId = $zsduoId;
@@ -114,26 +139,28 @@ class PddDdkPhraseGenerate extends Request
         return $this->zsduoId;
     }
 
-    public function setStyle($style)
+    public function setGenerateWeApp($generateWeApp)
     {
-        $this->style = $style;
+        $this->generateWeApp = $generateWeApp;
     }
 
-    public function getStyle()
+    public function getGenerateWeApp()
     {
-        return $this->style;
+        return $this->generateWeApp;
     }
 
     public function getParams()
     {
         $params = [
-            'type'              => $this->type,
-            'p_id'              => $this->pid,
-            'goods_id_list'     => $this->goodsIdList,
-            'multi_group'       => $this->multiGroup,
-            'custom_parameters' => $this->customParameters,
-            'zs_duo_id'         => $this->zsduoId,
-            'style'             => $this->style,
+            'type'                   => $this->type,
+            'p_id'                   => $this->pid,
+            'goods_id_list'          => $this->goodsIdList,
+            'generate_short_url'     => $this->generateShortUrl,
+            'multi_group'            => $this->multiGroup,
+            'custom_parameters'      => $this->customParameters,
+            'generate_weapp_webview' => $this->generateWeappWebview,
+            'zs_duo_id'              => $this->zsduoId,
+            'generate_we_app'        => $this->generateWeApp,
         ];
         return array_filter($params);
     }

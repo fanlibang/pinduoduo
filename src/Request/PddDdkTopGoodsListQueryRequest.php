@@ -9,7 +9,7 @@ namespace pinduoduo\Request;
 
 use pinduoduo\AbstractInterface\Request;
 
-class PddDdkTopGoodsListQuery extends Request
+class PddDdkTopGoodsListQueryRequest extends Request
 {
     /**
      * 多多客获取爆款排行商品接口

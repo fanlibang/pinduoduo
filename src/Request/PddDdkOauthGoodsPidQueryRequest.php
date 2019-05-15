@@ -3,13 +3,24 @@ namespace pinduoduo\Request;
 
 use pinduoduo\AbstractInterface\Request;
 
-class DdkOauthGoodsPidQueryRequest extends Request
+class PddDdkOauthGoodsPidQueryRequest extends Request
 {
+    /**
+     * 多多客已生成推广位信息查询
+     * @var string
+     */
     private $type = 'pdd.ddk.oauth.goods.pid.query';
 
-
+    /**
+     * 返回的页数
+     * @var
+     */
     private $page;
 
+    /**
+     * 返回的每页推广位数量
+     * @var
+     */
     private $pageSize;
 
     public function setType($type)
@@ -32,7 +43,6 @@ class DdkOauthGoodsPidQueryRequest extends Request
         return $this->page;
     }
 
-
     public function setPageSize($pageSize)
     {
         $this->pageSize = $pageSize;
@@ -42,7 +52,6 @@ class DdkOauthGoodsPidQueryRequest extends Request
     {
         return $this->pageSize;
     }
-
 
     public function getParams()
     {

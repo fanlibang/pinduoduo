@@ -3,14 +3,14 @@ namespace pinduoduo\Request;
 
 use pinduoduo\AbstractInterface\Request;
 
-class DdkOauthWeappQrcodeUrlGenRequest extends Request
+class PddDdkWeappQrcodeUrlGenRequest extends Request
 {
 
     /**
-     * 生成普通商品推广链接
+     * 多多客生成单品推广小程序二维码url
      * @var string
      */
-    private $type = 'pdd.ddk.oauth.weapp.qrcode.url.gen';
+    private $type = 'pdd.ddk.weapp.qrcode.url.gen';
 
     /**
      * 推广位ID
@@ -89,11 +89,11 @@ class DdkOauthWeappQrcodeUrlGenRequest extends Request
     public function getParams()
     {
         $params = [
-            'type'                   => $this->type,
-            'p_id'                   => $this->pid,
-            'goods_id_list'          => $this->goodsIdList,
-            'custom_parameters'      => $this->customParameters,
-            'zs_duo_id'              => $this->zsduoId,
+            'type'              => $this->type,
+            'p_id'              => $this->pid,
+            'goods_id_list'     => $this->goodsIdList,
+            'custom_parameters' => $this->customParameters,
+            'zs_duo_id'         => $this->zsduoId,
         ];
         return array_filter($params);
     }
